@@ -21,4 +21,7 @@ async def chat_with_ai(request: MessageRequest):
         response = model.generate_content(prompt)
         return {"reply": response.text}
     except Exception as e:
+        # THÊM ĐÚNG DÒNG IN LỖI NÀY VÀO ĐÂY:
+        print(f"\n[BẮT ĐƯỢC LỖI API]: {e}\n") 
+        
         return {"reply": "Thầy đang bận chút việc, em hỏi lại sau nhé!"}
